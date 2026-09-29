@@ -1,4 +1,5 @@
 const projeto1 = {
+  link: "https://github.com/Joaoromie/solar-landing-page-final-main",
   title: "Projeto 01",
   file: "projeto-01.md",
   description: "Descrição completa do projeto: qual problema resolve, o que você aprendeu e como foi feito.",
@@ -6,6 +7,7 @@ const projeto1 = {
 };
 
 const projeto2 = {
+  link: "https://github.com/Joaoromie/Louie",
   title: "Projeto 02",
   file: "projeto-02.md",
   description: "Descrição completa do projeto: qual problema resolve, o que você aprendeu e como foi feito.",
@@ -13,6 +15,7 @@ const projeto2 = {
 };
 
 const projeto3 = {
+  link: "https://github.com/Joaoromie/Rooftop-restaurante",
   title: "Projeto 03",
   file: "projeto-03.md",
   description: "Descrição completa do projeto: qual problema resolve, o que você aprendeu e como foi feito.",
@@ -24,6 +27,8 @@ const modalTitle = document.querySelector("#modalTitle");
 const modalFile = document.querySelector("#modalFile");
 const modalDescription = document.querySelector("#modalDesc");
 const modalTags = document.querySelector("#modalTags");
+const projectLink = document.querySelector("#projectLink");
+const sourceLink = document.querySelector("#sourceLink");
 const closeButton = projectModal.querySelector(".modal__close");
 const page = document.querySelector("main");
 const navigation = document.querySelector(".navigation");
@@ -47,6 +52,10 @@ function abrirModal(numero) {
   modalTitle.textContent = project.title;
   modalFile.textContent = project.file;
   modalDescription.textContent = project.description;
+
+  // Os dois botões levam ao repositório do projeto escolhido.
+  projectLink.href = project.link;
+  sourceLink.href = project.link;
 
   // Limpa as tags anteriores antes de adicionar as novas.
   modalTags.textContent = "";
